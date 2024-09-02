@@ -1,3 +1,4 @@
+import turtle
 # Flower Shop intro
 print(" . . . . . . . . . . . . . . . . . . .\n*. Welcome to the Flawless Flower Shop! .*\n . . . . . . . . . . . . . . . . . . . \nWe create custom bouquets for every occasion!\n")
 
@@ -38,7 +39,7 @@ def check_order(order, flower_list):
         else:
             i += 1
 
-    # Process singular/plural terms if no number was found for that flower
+    # Process singular/plural terms if no number
     i = 0
     while i < len(words):
         flower_found = False
