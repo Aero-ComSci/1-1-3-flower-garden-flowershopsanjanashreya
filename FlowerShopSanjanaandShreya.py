@@ -1,6 +1,5 @@
-import turtle
 # Flower Shop intro
-print(" . . . . . . . . . . . . . . . . . . .\n*. Welcome to the Flawless Flower Shop! .*\n . . . . . . . . . . . . . . . . . . . \nWe create custom bouquets for every occasion!\n")
+print("\n. . . . . . . . . . . . . . . . . . .\n*. Welcome to the Flawless Flower Shop! .*\n . . . . . . . . . . . . . . . . . . . \n\nWe create custom bouquets for every occasion!")
 
 # In Stock
 flowers = ["rose", "sunflower", "daisy", "poppy", "tulip"]
@@ -63,7 +62,7 @@ def check_order(order, flower_list):
 
 while True:
     # order
-    order = input("\n\nWhat would you like to order today? (Type 'exit' to leave the shop)\n")
+    order = input(". . . . . . . . . . . . . . . . .  . . .. . . . . . .\n\nWhat would you like to order today? (Type 'exit' to leave the shop)\n")
     if order.lower() == 'exit':
         print("\nThank you for visiting the Flawless Flower Shop! Have a great day!")
         break
