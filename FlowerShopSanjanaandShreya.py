@@ -4,7 +4,7 @@ print(" . . . . . . . . . . . . . . . . . . .\n*. Welcome to the Flawless Flower
 # In Stock
 flowers = ["rose", "sunflower", "daisy", "poppy", "tulip"]
 
-# pluarl
+# plural to singular mapping
 plural_to_singular = {
     "roses": "rose",
     "sunflowers": "sunflower",
@@ -18,36 +18,45 @@ def check_order(order, flower_list):
     words = order.lower().split()
     i = 0
 
- 
-    # singular/plural
+    # Process numbers and specific counts
+    while i < len(words):
+        if words[i].isdigit():
+            count = int(words[i])
+            if i + 1 < len(words):
+                flower = words[i + 1]
+                # Check if the next word is a plural form
+                if flower in plural_to_singular:
+                    flower = plural_to_singular[flower]
+                # Check if the flower is in stock and update the count
+                if flower in flower_list:
+                    flower_count[flower] += count
+                    i += 2
+                else:
+                    i += 1
+            else:
+                i += 1
+        else:
+            i += 1
+
+    # Process singular/plural terms if no number was found for that flower
     i = 0
     while i < len(words):
         flower_found = False
         if words[i] in flower_list:
+            # If the flower has been counted already with a number, skip
             if flower_count[words[i]] == 0:
                 flower_count[words[i]] += 1
             flower_found = True
         elif words[i] in plural_to_singular:
             singular_form = plural_to_singular[words[i]]
+            # Only add if no count was assigned earlier
             if flower_count[singular_form] == 0:
                 flower_count[singular_form] += 3
             flower_found = True
         if not flower_found:
-            i += 1  
+            i += 1
         else:
-            i += 1  
-
-       # numbers and specific count
-    while i < len(words):
-        if words[i].isdigit():
-            count = int(words[i])
-            if i + 1 < len(words) and words[i + 1] in flower_list:
-                flower_count[words[i + 1]] += count
-                i += 2  
-            else:
-                i += 1  
-        else:
-            i += 1  
+            i += 1
 
     return {f: count for f, count in flower_count.items() if count > 0}
 
