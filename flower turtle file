@@ -20,15 +20,16 @@ def drawstem():
     painter.forward(180)
     painter.left(90)
 
-def drawpetal():
-    painter.begin_fill()
-    painter.circle(100,60)
-    painter.left(120)
-    painter.circle(100,60)
-    painter.left(120)
-    painter.end_fill()
+
 def drawsunflower():
-    painter.color('yellow')
+    def drawpetal():
+        painter.begin_fill()
+        painter.circle(100,60)
+        painter.left(120)
+        painter.circle(100,60)
+        painter.left(120)
+        painter.end_fill()
+        painter.color('yellow')
     i = 0
     while i < 12:
         drawpetal()
@@ -41,5 +42,30 @@ def drawsunflower():
     painter.begin_fill()
     painter.circle(40)
     painter.end_fill()
+
+def drawdaisy():
+    def drawpetal():
+        painter.begin_fill()
+        painter.circle(60,60)
+        painter.left(120)
+        painter.circle(60,60)
+        painter.left(120)
+        painter.end_fill()
+        painter.color('white')
+    i = 0
+    while i < 12:
+        drawpetal()
+        painter.left(30)
+        i += 1    
+    painter.forward(-10)
+    painter.right(90)
+    painter.forward(-2)
+    painter.color('yellow')
+    painter.begin_fill()
+    painter.circle(10)
+    painter.end_fill()
+drawstem()
+drawdaisy()
 drawstem()
 drawsunflower()
+
