@@ -1,0 +1,45 @@
+import turtle as trtl
+
+trtl.bgcolor("black")
+painter = trtl.Turtle()
+painter.speed(4)
+
+##defines functions for later use
+def drawstem():
+    painter.color('green')
+    painter.forward(20)
+    painter.left(90)
+    painter.forward(180)
+    painter.left(90)
+    painter.forward(20)
+    painter.left(90)
+    painter.forward(180)
+    painter.left(90)
+    painter.forward(20)
+    painter.left(90)
+    painter.forward(180)
+    painter.left(90)
+
+def drawpetal():
+    painter.begin_fill()
+    painter.circle(100,60)
+    painter.left(120)
+    painter.circle(100,60)
+    painter.left(120)
+    painter.end_fill()
+def drawsunflower():
+    painter.color('yellow')
+    i = 0
+    while i < 12:
+        drawpetal()
+        painter.left(30)
+        i += 1    
+    painter.forward(-40)
+    painter.right(90)
+    painter.forward(-2)
+    painter.color('brown')
+    painter.begin_fill()
+    painter.circle(40)
+    painter.end_fill()
+drawstem()
+drawsunflower()
