@@ -2,14 +2,14 @@
 print("\n. . . . . . . . . . . . . . . . . . .\n*. Welcome to the Flawless Flower Shop! .*\n . . . . . . . . . . . . . . . . . . . \n\nWe create custom bouquets for every occasion!")
 
 # In Stock
-flowers = ["rose", "sunflower", "daisy", "poppy", "tulip"]
+flowers = ["lotus", "sunflower", "daisy", "marigold", "tulip"]
 
 # plural to singular mapping
 plural_to_singular = {
-    "roses": "rose",
+    "lotuses": "lotus",
     "sunflowers": "sunflower",
     "daisies": "daisy",
-    "poppies": "poppy",
+    "marigolds": "marigold",
     "tulips": "tulip"
 }
 
