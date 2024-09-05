@@ -1,25 +1,26 @@
 import turtle as trtl
 
+def printTest():
+    print("test")
 
 
-
-trtl.bgcolor("light blue")
+# trtl.bgcolor("light blue")
 painter = trtl.Turtle()
-painter.speed(0)
-painter.color("brown")
-painter.setheading(0)
-painter.fillcolor("brown")
-painter.begin_fill()
-painter.forward(300)
-painter.right(100)
-painter.forward(250)
-painter.right(80)
-painter.forward(600)
-painter.right(100)
-painter.forward(250)
-painter.right(80)
-painter.forward(300)
-painter.end_fill()
+# painter.speed(0)
+# painter.color("brown")
+# painter.setheading(0)
+# painter.fillcolor("brown")
+# painter.begin_fill()
+# painter.forward(300)
+# painter.right(100)
+# painter.forward(250)
+# painter.right(80)
+# painter.forward(600)
+# painter.right(100)
+# painter.forward(250)
+# painter.right(80)
+# painter.forward(300)
+# painter.end_fill()
 
 
 #flower bed
@@ -270,10 +271,10 @@ def drawmarigold():
 
 
 
-drawdaisy()
-drawsunflower()
-drawlotus()
-drawtulip()
-drawmarigold()
+# drawdaisy()
+# drawsunflower()
+# drawlotus()
+# drawtulip()
+# drawmarigold()
 
 
