@@ -1,15 +1,19 @@
+import flowerdraw
+
+flowerdraw.drawtulip()
+
 # Flower Shop intro
 print("\n. . . . . . . . . . . . . . . . . . .\n*. Welcome to the Flawless Flower Shop! .*\n . . . . . . . . . . . . . . . . . . . \n\nWe create custom bouquets for every occasion!")
 
 # In Stock
-flowers = ["lotus", "sunflower", "daisy", "marigold", "tulip"]
+flowers = ["rose", "sunflower", "daisy", "lotus", "tulip"]
 
 # plural to singular mapping
 plural_to_singular = {
-    "lotuses": "lotus",
+    "roses": "rose",
     "sunflowers": "sunflower",
     "daisies": "daisy",
-    "marigolds": "marigold",
+    "lotuses": "lotus",
     "tulips": "tulip"
 }
 
@@ -61,6 +65,7 @@ def check_order(order, flower_list):
     return {f: count for f, count in flower_count.items() if count > 0}
 
 while True:
+    flowerdraw.printTest()
     # order
     order = input(". . . . . . . . . . . . . . . . .  . . .. . . . . . .\n\nWhat would you like to order today? (Type 'exit' to leave the shop)\n")
     if order.lower() == 'exit':
