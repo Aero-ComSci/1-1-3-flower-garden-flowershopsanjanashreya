@@ -1,40 +1,150 @@
 import turtle as trtl
 
 
-trtl.bgcolor("black")
+
+
+trtl.bgcolor("light blue")
 painter = trtl.Turtle()
 painter.speed(0)
+painter.color("brown")
+painter.setheading(0)
+painter.fillcolor("brown")
+painter.begin_fill()
+painter.forward(300)
+painter.right(100)
+painter.forward(250)
+painter.right(80)
+painter.forward(600)
+painter.right(100)
+painter.forward(250)
+painter.right(80)
+painter.forward(300)
+painter.end_fill()
+
+
+#flower bed
+
+
 def positionreset(g):
    painter.penup()
-   painter.goto(g, 100)
+   painter.goto(g, -100)
    painter.pendown()
    painter.setheading(0)
 
 
 
 
-
-
 ##defines functions for later use
 global x
-x = 0
+x = -400
 def drawstem():
    global x
-   x += 100
+   x += 120
    positionreset(x)
    painter.color('green')
+   painter.begin_fill()
    painter.forward(20)
    painter.left(90)
-   painter.forward(180)
-   painter.left(90)
-   painter.forward(20)
-   painter.left(90)
-   painter.forward(180)
+   painter.forward(210)
    painter.left(90)
    painter.forward(20)
    painter.left(90)
-   painter.forward(180)
+   painter.forward(210)
    painter.left(90)
+   painter.end_fill()
+   painter.forward(20)
+   painter.left(90)
+   painter.forward(210)
+   painter.left(180)
+   painter.begin_fill()
+   painter.forward(150)
+   painter.left(120)
+   painter.forward(50)
+   painter.left(90)
+   painter.forward(20)
+   painter.left(80)
+   painter.forward(55)
+   painter.right(120)
+   painter.forward(140)
+   painter.left(90)
+   painter.end_fill()
+   painter.forward(20)
+   
+
+
+ 
+
+
+
+
+
+
+
+
+def drawtulip():
+    drawstem()
+    painter.setheading(180)
+    painter.color("purple")
+    painter.penup()
+    painter.forward(60)
+    painter.pendown()
+    painter.begin_fill()
+    painter.left(90)
+    painter.circle(60,180)
+    painter.forward(30)
+    painter.left(125)
+    painter.forward(40)
+    painter.end_fill()
+    painter.begin_fill()
+    painter.left(285)
+    painter.forward(40)
+    painter.left(85)
+    painter.forward(40)
+    painter.left(-100)
+    painter.forward(40)
+    painter.setheading(260)
+    painter.forward(40)
+    painter.end_fill()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -54,7 +164,7 @@ def drawsunflower():
    while i < 12:
        drawpetal()
        painter.left(30)
-       i += 1   
+       i += 1  
    painter.forward(-40)
    painter.right(90)
    painter.forward(-2)
@@ -62,6 +172,8 @@ def drawsunflower():
    painter.begin_fill()
    painter.circle(40)
    painter.end_fill()
+
+
 
 
 def drawdaisy():
@@ -78,7 +190,7 @@ def drawdaisy():
    while i < 12:
        drawpetal()
        painter.left(30)
-       i += 1   
+       i += 1  
    painter.forward(-10)
    painter.right(90)
    painter.forward(-2)
@@ -90,7 +202,11 @@ def drawdaisy():
 
 
 
-def drawchrysanthemum():
+
+
+
+
+def drawlotus():
    drawstem()
    painter.color('pink')
    def drawpetal():
@@ -104,25 +220,45 @@ def drawchrysanthemum():
    while i < 12:
        drawpetal()
        painter.left(30)
-       i += 1   
+       i += 1  
 
 
-def drawdandelion():
+
+
+
+
+def drawmarigold():
    drawstem()
-   painter.forward(-25)
-   painter.color('white')
+   painter.color('orange')
    def drawpetal():
        painter.begin_fill()
        painter.circle(70,60)
-       painter.left(180)
+       painter.left(120)
        painter.circle(70,60)
-       painter.left(180)
+       painter.left(120)
        painter.end_fill()
+   def drawinside():
+       painter.color('yellow')
+       painter.begin_fill()
+       painter.circle(30,60)
+       painter.left(120)
+       painter.circle(30,60)
+       painter.left(120)
+       painter.end_fill()
+       
    i = 0
    while i < 36:
        drawpetal()
        painter.left(10)
-       i += 1   
+       i += 1
+   h = 0
+   while h < 18:
+       drawinside()
+       painter.left(20)
+       h += 1  
+
+
+   
 
 
 
@@ -132,9 +268,12 @@ def drawdandelion():
  
 
 
+
+
 drawdaisy()
 drawsunflower()
-drawchrysanthemum()
-drawdandelion()
+drawlotus()
+drawtulip()
+drawmarigold()
 
 
