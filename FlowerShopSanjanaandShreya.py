@@ -70,6 +70,8 @@ while True:
     if order.lower() == 'exit':
         print("\nThank you for visiting the Flawless Flower Shop! Have a great day!")
         break
+    elif order.lower() == "rose" or "roses":
+        print("Our roses are not in stock due to high demand.")
     
     flower_count = check_order(order, flowers)
     
@@ -78,6 +80,8 @@ while True:
         for flower, count in flower_count.items():
             print(f"- {count} {flower.capitalize()}(s)")
         
+        # Call the draw function
         flowerdraw.draw_flowers(flower_count)
+    
     else:
         print("\nSorry, we do not have those flowers in stock!")
