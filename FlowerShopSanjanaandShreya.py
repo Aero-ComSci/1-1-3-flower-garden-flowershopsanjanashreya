@@ -70,7 +70,9 @@ while True:
     if order.lower() == 'exit':
         print("\nThank you for visiting the Flawless Flower Shop! Have a great day!")
         break
-    elif order.lower() == "rose" or "roses":
+    
+    # Check if the order contains "rose" or "roses"
+    if "rose" in order.lower() or "roses" in order.lower():
         print("Our roses are not in stock due to high demand.")
     
     flower_count = check_order(order, flowers)
