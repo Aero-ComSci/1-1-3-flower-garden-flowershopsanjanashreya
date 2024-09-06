@@ -1,16 +1,16 @@
 import flowerdraw
 
-flowerdraw.drawtulip()
+flowerdraw.start()
 
 # Flower Shop intro
 print("\n. . . . . . . . . . . . . . . . . . .\n*. Welcome to the Flawless Flower Shop! .*\n . . . . . . . . . . . . . . . . . . . \n\nWe create custom bouquets for every occasion!")
 
 # In Stock
-flowers = ["rose", "sunflower", "daisy", "lotus", "tulip"]
+flowers = ["marigold", "sunflower", "daisy", "lotus", "tulip"]
 
 # plural to singular mapping
 plural_to_singular = {
-    "roses": "rose",
+    "marigolds": "marigold",
     "sunflowers": "sunflower",
     "daisies": "daisy",
     "lotuses": "lotus",
@@ -65,18 +65,19 @@ def check_order(order, flower_list):
     return {f: count for f, count in flower_count.items() if count > 0}
 
 while True:
-    flowerdraw.printTest()
     # order
     order = input(". . . . . . . . . . . . . . . . .  . . .. . . . . . .\n\nWhat would you like to order today? (Type 'exit' to leave the shop)\n")
     if order.lower() == 'exit':
         print("\nThank you for visiting the Flawless Flower Shop! Have a great day!")
         break
     
-    flower_counts = check_order(order, flowers)
+    flower_count = check_order(order, flowers)
     
-    if flower_counts:
+    if flower_count:
         print("\nYou have ordered the following flowers:")
-        for flower, count in flower_counts.items():
+        for flower, count in flower_count.items():
             print(f"- {count} {flower.capitalize()}(s)")
+        
+        flowerdraw.draw_flowers(flower_count)
     else:
         print("\nSorry, we do not have those flowers in stock!")
