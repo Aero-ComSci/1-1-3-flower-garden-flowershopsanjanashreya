@@ -33,7 +33,7 @@ def positionreset(g):
 
 def drawstem():
     global painter, x
-    x += 90
+    x += 100
     positionreset(x)
     painter.color('green')
     painter.begin_fill()
