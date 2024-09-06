@@ -2,7 +2,7 @@ import turtle as trtl
 
 # Global painter variable
 painter = None
-x = -430  # Initialize x globally
+x = -410  # Initialize x globally
 
 def start():
     global painter
